@@ -5,8 +5,19 @@ const searchInput = document.getElementById('search');
 const statusFilter = document.getElementById('status-filter');
 const rowTemplate = document.getElementById('row-template');
 const flatOptions = document.getElementById('flat-options');
+const notice = document.getElementById('notice');
 
 const formatCurrency = (value) => `₹${Number(value).toLocaleString('en-IN')}`;
+const formatDate = (value) => {
+  if (!value) return '—';
+  const parsed = new Date(value);
+  return Number.isNaN(parsed.getTime()) ? '—' : parsed.toLocaleDateString();
+};
+
+function announce(message, tone = 'info') {
+  notice.textContent = message;
+  notice.className = `notice ${tone !== 'info' ? tone : ''}`.trim();
+}
 
 function seedData() {
   return {
@@ -39,12 +50,28 @@ function saveState() {
   localStorage.setItem(storageKey, JSON.stringify(state));
 }
 
+function calculateOutstandingMonths(flat) {
+  if (!flat.lastPayment) return 1;
+  const last = new Date(flat.lastPayment);
+  if (Number.isNaN(last.getTime())) return 1;
+  const now = new Date();
+  return Math.max((now.getFullYear() - last.getFullYear()) * 12 + now.getMonth() - last.getMonth(), 0);
+}
+
+function calculateOutstandingAmount(flat) {
+  const monthsDue = calculateOutstandingMonths(flat);
+  if (monthsDue <= 0) return 0;
+  return monthsDue * Number(flat.maintenance || 0);
+}
+
 function summarize() {
   const totalFlats = state.flats.length;
   const pending = state.flats.filter((f) => f.status === 'pending').length;
   const overdue = state.flats.filter((f) => f.status === 'overdue').length;
   const paid = state.flats.filter((f) => f.status === 'paid').length;
   const totalMaintenance = state.flats.reduce((sum, f) => sum + Number(f.maintenance || 0), 0);
+  const outstandingAmount = state.flats.reduce((sum, flat) => sum + calculateOutstandingAmount(flat), 0);
+  const flatsWithOutstanding = state.flats.filter((flat) => calculateOutstandingAmount(flat) > 0).length;
   const collectedThisMonth = state.flats.reduce((sum, f) => {
     const last = f.lastPayment ? new Date(f.lastPayment) : null;
     const now = new Date();
@@ -57,6 +84,8 @@ function summarize() {
   const stats = [
     { label: 'Active flats', value: totalFlats, tone: 'neutral' },
     { label: 'Collected this month', value: formatCurrency(collectedThisMonth), tone: 'success' },
+    { label: 'Outstanding amount', value: formatCurrency(outstandingAmount), tone: outstandingAmount > 0 ? 'warning' : 'success' },
+    { label: 'Flats with dues', value: flatsWithOutstanding, tone: flatsWithOutstanding > 0 ? 'warning' : 'success' },
     { label: 'Pending follow-ups', value: pending, tone: 'warning' },
     { label: 'Overdue', value: overdue, tone: 'danger' },
     { label: 'Total monthly billing', value: formatCurrency(totalMaintenance), tone: 'neutral' },
@@ -85,6 +114,7 @@ function badge(status) {
 function statusFromDate(date, maintenance) {
   if (!date) return 'pending';
   const last = new Date(date);
+  if (Number.isNaN(last.getTime())) return 'pending';
   const now = new Date();
   const monthsDiff = (now.getFullYear() - last.getFullYear()) * 12 + now.getMonth() - last.getMonth();
   if (monthsDiff <= 0) return 'paid';
@@ -97,6 +127,7 @@ function renderFlats() {
   const filter = statusFilter.value;
   rowsContainer.innerHTML = '';
   flatOptions.innerHTML = '';
+  let rowCount = 0;
 
   state.flats
     .filter((f) => {
@@ -120,8 +151,13 @@ function renderFlats() {
           case 'maintenance':
             cell.textContent = formatCurrency(flat.maintenance);
             break;
+          case 'outstanding': {
+            const amount = calculateOutstandingAmount(flat);
+            cell.innerHTML = amount > 0 ? `<div class="strong">${formatCurrency(amount)}</div><div class="muted">${calculateOutstandingMonths(flat)} month(s)</div>` : '—';
+            break;
+          }
           case 'lastPayment':
-            cell.textContent = flat.lastPayment ? new Date(flat.lastPayment).toLocaleDateString() : '—';
+            cell.textContent = formatDate(flat.lastPayment);
             break;
           case 'status':
             cell.innerHTML = badge(flat.status);
@@ -144,12 +180,20 @@ function renderFlats() {
         cell.setAttribute('data-label', cell.dataset.field.replace(/([A-Z])/g, ' $1'));
       });
 
-      rowsContainer.appendChild(row);
+        rowsContainer.appendChild(row);
+        rowCount += 1;
 
-      const option = document.createElement('option');
-      option.value = flat.flat;
-      flatOptions.appendChild(option);
-    });
+        const option = document.createElement('option');
+        option.value = flat.flat;
+        flatOptions.appendChild(option);
+      });
+
+  if (!rowCount) {
+    const empty = document.createElement('div');
+    empty.className = 'empty-state';
+    empty.textContent = 'No flats match your filters yet.';
+    rowsContainer.appendChild(empty);
+  }
 }
 
 function addOrUpdateFlat(flatData) {
@@ -166,7 +210,10 @@ function addOrUpdateFlat(flatData) {
 
 function collectPayment(flatId, amount, date, notes) {
   const flat = state.flats.find((f) => f.flat.toLowerCase() === flatId.toLowerCase());
-  if (!flat) return;
+  if (!flat) {
+    announce(`Flat ${flatId} was not found. Please add it first.`, 'danger');
+    return;
+  }
   const paymentDate = date || new Date().toISOString().slice(0, 10);
   flat.lastPayment = paymentDate;
   flat.status = 'paid';
@@ -176,6 +223,7 @@ function collectPayment(flatId, amount, date, notes) {
   saveState();
   renderFlats();
   summarize();
+  announce(`Payment recorded for ${flat.flat}.`, 'success');
 }
 
 function markPending(flatId) {
@@ -185,6 +233,7 @@ function markPending(flatId) {
   saveState();
   renderFlats();
   summarize();
+  announce(`Marked ${flat.flat} as pending.`, 'info');
 }
 
 function attachEvents() {
@@ -214,38 +263,41 @@ function attachEvents() {
     event.target.reset();
   });
 
-  document.getElementById('flat-form').addEventListener('submit', (event) => {
-    event.preventDefault();
-    const payload = {
-      flat: document.getElementById('flat-number').value.trim(),
-      resident: document.getElementById('flat-resident').value.trim(),
+    document.getElementById('flat-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const payload = {
+        flat: document.getElementById('flat-number').value.trim(),
+        resident: document.getElementById('flat-resident').value.trim(),
       maintenance: Number(document.getElementById('flat-maintenance').value) || 0,
       phone: document.getElementById('flat-phone').value.trim(),
       notes: document.getElementById('flat-notes').value.trim(),
       lastPayment: new Date().toISOString().slice(0, 10),
       status: 'paid',
     };
-    addOrUpdateFlat(payload);
-    event.target.reset();
-  });
+      addOrUpdateFlat(payload);
+      event.target.reset();
+      announce(`${payload.flat} saved.`, 'success');
+    });
 
-  document.getElementById('reset-data').addEventListener('click', () => {
-    state = seedData();
-    saveState();
-    renderFlats();
-    summarize();
-  });
+    document.getElementById('reset-data').addEventListener('click', () => {
+      state = seedData();
+      saveState();
+      renderFlats();
+      summarize();
+      announce('Demo data restored.', 'info');
+    });
 
-  document.getElementById('export-data').addEventListener('click', () => {
-    const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `sainivas-billing-${Date.now()}.json`;
-    a.click();
-    URL.revokeObjectURL(url);
-  });
-}
+    document.getElementById('export-data').addEventListener('click', () => {
+      const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `sainivas-billing-${Date.now()}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      announce('Snapshot exported as JSON.', 'success');
+    });
+  }
 
 function refreshStatuses() {
   state.flats.forEach((flat) => {
@@ -258,3 +310,4 @@ refreshStatuses();
 attachEvents();
 renderFlats();
 summarize();
+announce('Snapshot loaded. Use the forms below to record payments or add flats.');

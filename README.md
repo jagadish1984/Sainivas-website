@@ -3,10 +3,10 @@
 A lightweight browser-based demo for tracking apartment maintenance billing and collections. The app runs entirely in the browser and stores data locally (no backend required).
 
 ## Features
-- Dashboard overview of total flats, collections, pending, and overdue dues
+- Dashboard overview of total flats, collections, pending, overdue dues, and outstanding amounts
 - Resident roster with search, status filter, and quick actions (collect, mark pending)
 - Forms to record maintenance payments and add/update flats
-- Export current snapshot as JSON and restore demo data with one click
+- Export current snapshot as JSON and restore demo data with one click plus inline action feedback
 - Mobile-friendly responsive layout
 
 ## Running locally
