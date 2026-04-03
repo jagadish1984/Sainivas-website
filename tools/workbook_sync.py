@@ -219,7 +219,7 @@ def write_month_sheet(workbook, month):
     for index, header in enumerate(HEADERS, start=1):
         ws.cell(1, index).value = header
 
-    carry_label = month.get("carryForwardLabel") or f"Balance amount ({month_label(month['id'])})"
+    carry_label = month.get("carryForwardLabel") or f"Bank balance as of {month_label(month['id'])}"
     ws["L1"] = carry_label
     ws["M1"] = month.get("carryForwardValue", 0)
 

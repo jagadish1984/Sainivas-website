@@ -1,12 +1,19 @@
 import json
+import os
+import tempfile
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+from urllib.parse import parse_qs, urlparse
 
+from tools.extract_billing_seed import build_seed_from_workbook
 from tools.workbook_sync import sync_state_to_workbook
 
 
 ROOT = Path(__file__).resolve().parent
-PORT = 4173
+PORT = int(os.environ.get("PORT", "4173"))
+HOST = "0.0.0.0"
+WORKBOOK = ROOT / "Sai Nivas expendeature.xlsx"
+SEED_FILE = ROOT / "billing-seed.json"
 
 
 class AppHandler(SimpleHTTPRequestHandler):
@@ -22,23 +29,45 @@ class AppHandler(SimpleHTTPRequestHandler):
         self.wfile.write(body)
 
     def do_POST(self):
-        if self.path != "/api/sync":
-            self._send_json(404, {"error": "Not found"})
+        parsed = urlparse(self.path)
+
+        if parsed.path == "/api/sync":
+            try:
+                length = int(self.headers.get("Content-Length", "0"))
+                raw = self.rfile.read(length)
+                state = json.loads(raw.decode("utf-8"))
+                sync_state_to_workbook(state)
+                self._send_json(200, {"message": "Excel workbook synced successfully."})
+            except Exception as error:
+                self._send_json(500, {"error": str(error)})
             return
 
-        try:
-            length = int(self.headers.get("Content-Length", "0"))
-            raw = self.rfile.read(length)
-            state = json.loads(raw.decode("utf-8"))
-            sync_state_to_workbook(state)
-            self._send_json(200, {"message": "Excel workbook synced successfully."})
-        except Exception as error:
-            self._send_json(500, {"error": str(error)})
+        if parsed.path == "/api/import" or self.path.startswith("/api/import"):
+            try:
+                query = parse_qs(parsed.query)
+                file_name = query.get("name", ["uploaded.xlsx"])[0]
+                if not file_name.lower().endswith(".xlsx"):
+                    raise ValueError("Please upload an .xlsx file.")
+
+                length = int(self.headers.get("Content-Length", "0"))
+                raw = self.rfile.read(length)
+                with tempfile.NamedTemporaryFile(delete=False, suffix=".xlsx") as temp_file:
+                    temp_path = Path(temp_file.name)
+                    temp_file.write(raw)
+                build_seed_from_workbook(temp_path, SEED_FILE)
+                WORKBOOK.write_bytes(temp_path.read_bytes())
+                temp_path.unlink(missing_ok=True)
+                self._send_json(200, {"message": "Excel workbook imported and latest sheet loaded."})
+            except Exception as error:
+                self._send_json(500, {"error": str(error)})
+            return
+
+        self._send_json(404, {"error": "Not found"})
 
 
 if __name__ == "__main__":
-    server = ThreadingHTTPServer(("127.0.0.1", PORT), AppHandler)
-    print(f"Serving on http://127.0.0.1:{PORT}")
+    server = ThreadingHTTPServer((HOST, PORT), AppHandler)
+    print(f"Serving on http://{HOST}:{PORT}")
     try:
         server.serve_forever()
     except KeyboardInterrupt:

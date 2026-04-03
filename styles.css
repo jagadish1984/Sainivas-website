@@ -135,7 +135,7 @@ h1 {
 
 .month-bar {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: 1fr 1fr 1.2fr;
   gap: 12px;
   padding: 14px;
   margin-top: 12px;
@@ -145,6 +145,25 @@ h1 {
 .month-picker {
   display: grid;
   gap: 6px;
+}
+
+.readonly-display {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 11px 13px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.bank-highlight {
+  padding: 10px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(15, 118, 110, 0.08), rgba(214, 242, 238, 0.7));
+  border: 1px solid rgba(15, 118, 110, 0.16);
 }
 
 .month-picker label,
@@ -168,6 +187,10 @@ select {
   margin-top: 12px;
   padding: 12px 14px;
   border-radius: 22px;
+}
+
+.report-panel {
+  margin-top: 14px;
 }
 
 .summary-grid {
@@ -203,6 +226,49 @@ select {
   margin-top: 14px;
 }
 
+.reports-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.report-card {
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.report-card h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+
+.report-table-wrap {
+  overflow: auto;
+  margin-top: 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.report-table {
+  width: 100%;
+  min-width: 360px;
+  border-collapse: collapse;
+}
+
+.report-table thead {
+  background: #eef7f5;
+  color: var(--ink);
+}
+
+.report-table th,
+.report-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(32, 50, 53, 0.08);
+  text-align: left;
+}
+
 .span-2 {
   grid-column: 1 / -1;
 }
@@ -218,6 +284,12 @@ select {
   align-items: start;
   gap: 16px;
   margin-bottom: 14px;
+}
+
+.table-search {
+  min-width: 240px;
+  display: grid;
+  gap: 6px;
 }
 
 .section-head.slim {
@@ -346,7 +418,7 @@ td select {
   padding: 22px;
   border-radius: 22px;
   border: 1px solid var(--line);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 251, 249, 0.98));
+  background: #ffffff;
 }
 
 .bill-head,
@@ -362,13 +434,13 @@ td select {
 }
 
 .bill-brand h3 {
-  font-size: 1.95rem;
+  font-size: 2rem;
 }
 
 .bill-month {
-  padding: 8px 12px;
+  padding: 8px 14px;
   border-radius: 999px;
-  background: var(--accent-soft);
+  background: #eef7f5;
   color: var(--accent-strong);
   font-weight: 800;
 }
@@ -393,9 +465,11 @@ td select {
 }
 
 .bill-line {
-  display: flex;
-  justify-content: space-between;
-  gap: 14px;
+  display: grid;
+  grid-template-columns: minmax(180px, 1.5fr) minmax(120px, 1fr);
+  align-items: start;
+  gap: 18px;
+  padding: 4px 0;
 }
 
 .bill-line.total {
@@ -411,6 +485,23 @@ td select {
   border-radius: 16px;
   background: rgba(214, 242, 238, 0.5);
   color: #11413d;
+  line-height: 1.6;
+}
+
+.bill-line span:last-child,
+.bill-line strong:last-child {
+  text-align: right;
+  justify-self: end;
+  word-break: break-word;
+}
+
+.bill-sheet {
+  max-width: 820px;
+  margin: 0 auto;
+  border: 1px solid #d9dfdf;
+  border-radius: 18px;
+  padding: 24px;
+  background: #fff;
 }
 
 @media (max-width: 1180px) {
@@ -423,6 +514,7 @@ td select {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .reports-grid,
   .settings-inline {
     grid-template-columns: repeat(2, minmax(120px, 1fr));
   }
@@ -443,6 +535,7 @@ td select {
 
   .month-bar,
   .summary-grid,
+  .reports-grid,
   .settings-inline {
     grid-template-columns: 1fr;
   }
@@ -457,6 +550,11 @@ td select {
 }
 
 @media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+
   body {
     background: #fff;
   }
@@ -465,7 +563,10 @@ td select {
   .summary-strip,
   .month-bar,
   .hero,
-  #expense-list {
+  #expense-list,
+  .panel:first-child,
+  .layout > .panel:not(:last-child),
+  .section-head:not(:has(#bill-heading)) {
     display: none !important;
   }
 
@@ -473,11 +574,18 @@ td select {
     display: block;
   }
 
+  .shell,
   .panel {
     border: 0;
     background: #fff;
     box-shadow: none;
     padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .layout > .panel:last-child {
+    display: block !important;
   }
 
   .bill-preview {
@@ -485,5 +593,40 @@ td select {
     padding: 0;
     border: 0;
     background: #fff;
+    display: block;
+  }
+
+  .bill-sheet {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .bill-head,
+  .bill-meta,
+  .bill-lines,
+  .bill-total {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .bill-brand h3,
+  .bill-heading-main {
+    color: #111 !important;
+  }
+
+  .bill-line,
+  .bill-meta {
+    width: 100%;
+  }
+
+  .bill-line span:last-child,
+  .bill-line strong:last-child {
+    white-space: normal;
+    overflow: visible;
   }
 }

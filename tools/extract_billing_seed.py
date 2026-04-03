@@ -148,8 +148,8 @@ def parse_month_sheet(ws, order):
     }
 
 
-def build_seed():
-    workbook = load_workbook(WORKBOOK, data_only=True)
+def build_seed_from_workbook(workbook_path=WORKBOOK, output_path=OUTPUT):
+    workbook = load_workbook(workbook_path, data_only=True)
     months = []
 
     for order, name in enumerate(workbook.sheetnames, start=1):
@@ -163,7 +163,12 @@ def build_seed():
         "latestMonthId": months[-1]["id"] if months else None,
     }
 
-    OUTPUT.write_text(json.dumps(seed, indent=2), encoding="utf-8")
+    output_path.write_text(json.dumps(seed, indent=2), encoding="utf-8")
+    return seed
+
+
+def build_seed():
+    build_seed_from_workbook(WORKBOOK, OUTPUT)
     print(f"Wrote {OUTPUT}")
 
 

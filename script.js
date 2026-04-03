@@ -5,10 +5,12 @@ const RECORD_KEY = "state";
 const dom = {
   notice: document.getElementById("notice"),
   monthSelect: document.getElementById("month-select"),
-  dueDate: document.getElementById("due-date"),
+  dueDateDisplay: document.getElementById("due-date-display"),
   carryForwardValue: document.getElementById("carry-forward-value"),
   flatSearch: document.getElementById("flat-search"),
   summaryStrip: document.getElementById("summary-strip"),
+  bankReportBody: document.getElementById("bank-report-body"),
+  tankerReportBody: document.getElementById("tanker-report-body"),
   billingBody: document.getElementById("billing-body"),
   tableTitle: document.getElementById("table-title"),
   tankersCount: document.getElementById("tankers-count"),
@@ -21,6 +23,8 @@ const dom = {
   billPreview: document.getElementById("bill-preview"),
   createNextMonth: document.getElementById("create-next-month"),
   syncExcel: document.getElementById("sync-excel"),
+  importExcel: document.getElementById("import-excel"),
+  importFile: document.getElementById("import-file"),
   resetDatabase: document.getElementById("reset-database"),
   exportDatabase: document.getElementById("export-database"),
   addExpense: document.getElementById("add-expense"),
@@ -97,11 +101,26 @@ function endOfMonth(monthId) {
   return new Date(year, month, 0).toISOString().slice(0, 10);
 }
 
+function dueDateForMonth(monthId) {
+  const [year, month] = monthId.split("-").map(Number);
+  return new Date(year, month - 1, 10);
+}
+
 function labelFromMonthId(monthId) {
   const [year, month] = monthId.split("-").map(Number);
   return new Date(year, month - 1, 1).toLocaleDateString("en-IN", {
     month: "long",
     year: "numeric",
+  });
+}
+
+function dueDateLabel(monthId) {
+  const dueDate = dueDateForMonth(monthId);
+  return dueDate.toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    weekday: "long",
   });
 }
 
@@ -197,8 +216,8 @@ function transformSeed(seed) {
     return {
       id: month.id,
       label: month.label || labelFromMonthId(month.id),
-      dueDate: endOfMonth(month.id),
-      carryForwardLabel: month.carryForwardLabel || `Balance amount till ${month.label || month.id}`,
+      dueDate: dueDateForMonth(month.id).toISOString().slice(0, 10),
+      carryForwardLabel: month.carryForwardLabel || `Bank balance as of ${month.label || month.id}`,
       carryForwardValue: safeAmount(month.carryForwardValue),
       settings: {
         tankerCount: safeAmount(summary.tankerCount),
@@ -230,6 +249,14 @@ async function loadInitialState() {
   const initialState = transformSeed(seed);
   await dbSet(RECORD_KEY, initialState);
   return initialState;
+}
+
+async function reloadFromSeed() {
+  const response = await fetch(`billing-seed.json?t=${Date.now()}`);
+  const seed = await response.json();
+  appState = transformSeed(seed);
+  await saveState();
+  await render();
 }
 
 function monthRecord(monthId = appState.selectedMonthId) {
@@ -305,8 +332,42 @@ function summaryCards(month, model) {
     { label: "Common water share", value: currency.format(sharedPerFlat) },
     { label: "Total due", value: currency.format(model.tableTotalDue) },
     { label: "Received", value: currency.format(model.tableTotalReceived) },
-    { label: "Carry forward", value: currency.format(month.carryForwardValue || 0) },
+    { label: "Bank balance", value: currency.format(month.carryForwardValue || 0) },
   ];
+}
+
+function renderReports() {
+  const recentMonths = appState.months
+    .slice()
+    .sort((a, b) => a.id.localeCompare(b.id))
+    .slice(-12);
+
+  dom.bankReportBody.innerHTML = recentMonths
+    .map(
+      (month) => `
+        <tr>
+          <td>${labelFromMonthId(month.id)}</td>
+          <td>${currency.format(Number(month.carryForwardValue || 0))}</td>
+        </tr>
+      `
+    )
+    .join("");
+
+  dom.tankerReportBody.innerHTML = recentMonths
+    .map((month) => {
+      const tankerCount = Number(month.settings?.tankerCount || 0);
+      const rate = Number(month.settings?.costPerTanker || 0);
+      const total = tankerCount * rate;
+      return `
+        <tr>
+          <td>${labelFromMonthId(month.id)}</td>
+          <td>${tankerCount}</td>
+          <td>${currency.format(rate)}</td>
+          <td>${currency.format(total)}</td>
+        </tr>
+      `;
+    })
+    .join("");
 }
 
 function statusClass(status) {
@@ -433,82 +494,81 @@ function renderBillPreview(month, model) {
   }
 
   appState.selectedFlatId = flat.id;
-  dom.billHeading.textContent = `Bill for ${flat.flatNumber}`;
+  dom.billHeading.textContent = `Monthly bill for ${flat.flatNumber} - ${labelFromMonthId(month.id)}`;
 
   if (isCommon(flat.flatNumber)) {
     dom.billPreview.innerHTML = `
-      <div class="bill-head">
-        <div class="bill-brand">
-          <p class="eyebrow small">Shared usage</p>
-          <h3>Sai Nivas Building</h3>
+      <div class="bill-sheet">
+        <div class="bill-head">
+          <div class="bill-brand">
+            <p class="eyebrow small">Shared usage statement</p>
+            <h3>Sai Nivas Building</h3>
+          </div>
+          <div class="bill-month">${labelFromMonthId(month.id)}</div>
         </div>
-        <div class="bill-month">${labelFromMonthId(month.id)}</div>
-      </div>
-      <div class="bill-note">
-        The <strong>Common</strong> meter is for watchman/common usage. Its water bill is not billed to Common directly.
-        The amount is shared across the 16 residential flats for this month.
-      </div>
-      <div class="bill-lines">
-        <div class="bill-line"><span>Common units</span><strong>${numberFormat.format(flat.units)}</strong></div>
-        <div class="bill-line"><span>Total shared common water bill</span><strong>${currency.format(model.commonWaterBill)}</strong></div>
-        <div class="bill-line"><span>Per residential flat share</span><strong>${currency.format(model.computedRows.find((row) => isResidential(row.flatNumber))?.commonShare || 0)}</strong></div>
+        <div class="bill-note">
+          The <strong>Common</strong> meter is for watchman/common usage. Its water bill is not billed to Common directly.
+          The amount is shared across the 16 residential flats for this month.
+        </div>
+        <div class="bill-lines">
+          <div class="bill-line"><span>Common units</span><strong>${numberFormat.format(flat.units)}</strong></div>
+          <div class="bill-line"><span>Total shared common water bill</span><strong>${currency.format(model.commonWaterBill)}</strong></div>
+          <div class="bill-line"><span>Per residential flat share</span><strong>${currency.format(model.computedRows.find((row) => isResidential(row.flatNumber))?.commonShare || 0)}</strong></div>
+        </div>
       </div>
     `;
     return;
   }
 
   dom.billPreview.innerHTML = `
-    <div class="bill-head">
-      <div class="bill-brand">
-        <p class="eyebrow small">Monthly bill</p>
-        <h3>Sai Nivas Building</h3>
-        <p class="muted">Water reading, common maintenance, and garbage collection bill.</p>
+    <div class="bill-sheet">
+      <div class="bill-head">
+        <div class="bill-brand">
+          <p class="eyebrow small">Monthly maintenance bill</p>
+          <h3 class="bill-heading-main">Sai Nivas Building</h3>
+          <p class="muted">Water reading, common maintenance, and garbage collection bill.</p>
+        </div>
+        <div class="bill-month">${labelFromMonthId(month.id)}</div>
       </div>
-      <div class="bill-month">${labelFromMonthId(month.id)}</div>
-    </div>
-    <div class="bill-meta">
-      <div>
-        <div class="bill-label">Flat number</div>
-        <div class="bill-value">${flat.flatNumber}</div>
+      <div class="bill-meta">
+        <div>
+          <div class="bill-label">Flat number</div>
+          <div class="bill-value">${flat.flatNumber}</div>
+        </div>
+        <div>
+          <div class="bill-label">Due date</div>
+          <div class="bill-value">${dueDateLabel(month.id)}</div>
+        </div>
+        <div>
+          <div class="bill-label">Previous reading</div>
+          <div class="bill-value">${displayReading(flat.previousReading)}</div>
+        </div>
+        <div>
+          <div class="bill-label">Current reading</div>
+          <div class="bill-value">${displayReading(flat.currentReading)}</div>
+        </div>
       </div>
-      <div>
-        <div class="bill-label">Due date</div>
-        <div class="bill-value">${month.dueDate}</div>
+      <div class="bill-lines">
+        <div class="bill-line"><span>Water units</span><strong>${numberFormat.format(flat.units)}</strong></div>
+        <div class="bill-line"><span>Own water bill</span><strong>${isShop(flat.flatNumber) ? "NA" : currency.format(flat.baseWaterBill)}</strong></div>
+        <div class="bill-line"><span>Shared common water</span><strong>${isResidential(flat.flatNumber) ? currency.format(flat.commonShare) : "—"}</strong></div>
+        <div class="bill-line"><span>Common maintenance</span><strong>${currency.format(flat.commonMaintenance)}</strong></div>
+        <div class="bill-line"><span>Garbage</span><strong>${currency.format(flat.garbageAmount)}</strong></div>
+        <div class="bill-line"><span>Received amount</span><strong>${currency.format(flat.receivedAmount)}</strong></div>
+        <div class="bill-line total"><span>Total due</span><strong>${currency.format(flat.totalDue)}</strong></div>
+        <div class="bill-line total"><span>Status</span><strong>${flat.paymentStatus}</strong></div>
       </div>
-      <div>
-        <div class="bill-label">Previous reading</div>
-        <div class="bill-value">${displayReading(flat.previousReading)}</div>
+      <div class="bill-note">
+        Water charge calculation: ${currency.format(model.baseWaterCost)} / ${numberFormat.format(model.totalUsageUnits)} units = ${model.perUnitCost.toFixed(6)} per unit for ${labelFromMonthId(month.id)}.
       </div>
-      <div>
-        <div class="bill-label">Current reading</div>
-        <div class="bill-value">${displayReading(flat.currentReading)}</div>
-      </div>
-    </div>
-    <div class="bill-lines">
-      <div class="bill-line"><span>Water units</span><strong>${numberFormat.format(flat.units)}</strong></div>
-      <div class="bill-line"><span>Own water bill</span><strong>${isShop(flat.flatNumber) ? "NA" : currency.format(flat.baseWaterBill)}</strong></div>
-      <div class="bill-line"><span>Shared common water</span><strong>${isResidential(flat.flatNumber) ? currency.format(flat.commonShare) : "—"}</strong></div>
-      <div class="bill-line"><span>Common maintenance</span><strong>${currency.format(flat.commonMaintenance)}</strong></div>
-      <div class="bill-line"><span>Garbage</span><strong>${currency.format(flat.garbageAmount)}</strong></div>
-      <div class="bill-line"><span>Received amount</span><strong>${currency.format(flat.receivedAmount)}</strong></div>
-      <div class="bill-line total"><span>Total due</span><strong>${currency.format(flat.totalDue)}</strong></div>
-      <div class="bill-line total"><span>Status</span><strong>${flat.paymentStatus}</strong></div>
-    </div>
-    <div class="bill-note">
-      Water charge is calculated as:
-      <strong>${currency.format(model.baseWaterCost)}</strong>
-      divided by
-      <strong>${numberFormat.format(model.totalUsageUnits)}</strong>
-      units
-      =
-      <strong>${model.perUnitCost.toFixed(6)}</strong> per unit for ${labelFromMonthId(month.id)}.
     </div>
   `;
 }
 
 function syncHeaderFields(month) {
   dom.tableTitle.textContent = `Monthly billing sheet for ${labelFromMonthId(month.id)}`;
-  dom.dueDate.value = month.dueDate || "";
+  month.dueDate = dueDateForMonth(month.id).toISOString().slice(0, 10);
+  dom.dueDateDisplay.textContent = dueDateLabel(month.id);
   dom.carryForwardValue.value = month.carryForwardValue || 0;
   dom.tankersCount.value = month.settings.tankerCount || 0;
   dom.costPerTanker.value = month.settings.costPerTanker || 0;
@@ -525,6 +585,7 @@ async function render() {
   const model = flatComputedRows(month);
   syncHeaderFields(month);
   renderSummary(month, model);
+  renderReports();
   renderTable(month, model);
   renderExpenses(month);
   renderBillPreview(month, model);
@@ -562,8 +623,8 @@ function createMonthFromPrevious(previousMonth) {
   const newMonth = {
     id: newMonthId,
     label: labelFromMonthId(newMonthId),
-    dueDate: endOfMonth(newMonthId),
-    carryForwardLabel: `Balance amount (${labelFromMonthId(previousMonth.id)})`,
+    dueDate: dueDateForMonth(newMonthId).toISOString().slice(0, 10),
+    carryForwardLabel: `Bank balance as of ${labelFromMonthId(previousMonth.id)}`,
     carryForwardValue: previousMonth.carryForwardValue || 0,
     settings: { ...previousMonth.settings },
     expenses: [],
@@ -660,6 +721,39 @@ async function syncToExcel() {
   }
 }
 
+async function importExcelFile(file) {
+  if (!file) return;
+
+  dom.importExcel.disabled = true;
+  dom.importExcel.textContent = "Importing...";
+
+  try {
+    const buffer = await file.arrayBuffer();
+    const response = await fetch(`/api/import?name=${encodeURIComponent(file.name)}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      },
+      body: buffer,
+    });
+
+    const result = await response.json();
+    if (!response.ok) {
+      throw new Error(result.error || "Import failed");
+    }
+
+    await reloadFromSeed();
+    announce(result.message || "Excel workbook imported successfully.", "success");
+  } catch (error) {
+    console.error(error);
+    announce(error.message || "Unable to import workbook.", "danger");
+  } finally {
+    dom.importFile.value = "";
+    dom.importExcel.disabled = false;
+    dom.importExcel.textContent = "Import Excel";
+  }
+}
+
 function attachEvents() {
   dom.monthSelect.addEventListener("change", async (event) => {
     appState.selectedMonthId = event.target.value;
@@ -667,11 +761,6 @@ function attachEvents() {
   });
 
   dom.flatSearch.addEventListener("input", () => render());
-
-  dom.dueDate.addEventListener("input", async (event) => {
-    monthRecord().dueDate = event.target.value;
-    await render();
-  });
 
   dom.carryForwardValue.addEventListener("input", async (event) => {
     monthRecord().carryForwardValue = Number(event.target.value || 0);
@@ -748,6 +837,11 @@ function attachEvents() {
   });
 
   dom.syncExcel.addEventListener("click", syncToExcel);
+  dom.importExcel.addEventListener("click", () => dom.importFile.click());
+  dom.importFile.addEventListener("change", async (event) => {
+    const file = event.target.files?.[0];
+    await importExcelFile(file);
+  });
   dom.exportDatabase.addEventListener("click", exportDatabase);
   dom.resetDatabase.addEventListener("click", resetDatabase);
   dom.printBill.addEventListener("click", () => window.print());

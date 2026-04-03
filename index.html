@@ -24,6 +24,8 @@
       <div class="hero-actions">
         <button id="create-next-month" class="button primary" type="button">Create next month</button>
         <button id="sync-excel" class="button primary" type="button">Sync to Excel</button>
+        <button id="import-excel" class="button ghost" type="button">Import Excel</button>
+        <input id="import-file" type="file" accept=".xlsx" hidden>
         <button id="reset-database" class="button ghost" type="button">Reset local DB</button>
         <button id="export-database" class="button ghost" type="button">Export local DB</button>
       </div>
@@ -37,21 +39,60 @@
         <select id="month-select"></select>
       </div>
       <div class="month-picker">
-        <label for="due-date">Due date</label>
-        <input id="due-date" type="date">
+        <label>Due date</label>
+        <div id="due-date-display" class="readonly-display"></div>
       </div>
-      <div class="month-picker">
-        <label for="carry-forward-value">Carry forward balance</label>
+      <div class="month-picker bank-highlight">
+        <label for="carry-forward-value">Bank balance as on last day of month</label>
         <input id="carry-forward-value" type="number" step="1">
-      </div>
-      <div class="month-picker">
-        <label for="flat-search">Find flat</label>
-        <input id="flat-search" type="search" placeholder="Search flat number">
       </div>
     </section>
 
     <section class="summary-strip">
       <div id="summary-strip" class="summary-grid"></div>
+    </section>
+
+    <section class="panel report-panel print-hide">
+      <div class="section-head slim">
+        <div>
+          <p class="eyebrow small">Reports</p>
+          <h2>Monthly reports</h2>
+        </div>
+      </div>
+      <div class="reports-grid">
+        <div class="report-card">
+          <h3>Bank Balance Report</h3>
+          <p class="muted">Last 12 months closing bank balance.</p>
+          <div class="report-table-wrap">
+            <table class="report-table">
+              <thead>
+                <tr>
+                  <th>Month</th>
+                  <th>Bank Balance</th>
+                </tr>
+              </thead>
+              <tbody id="bank-report-body"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="report-card">
+          <h3>Water Tanker Report</h3>
+          <p class="muted">Tanker count, tanker rate, and monthly water bill.</p>
+          <div class="report-table-wrap">
+            <table class="report-table">
+              <thead>
+                <tr>
+                  <th>Month</th>
+                  <th>Tankers</th>
+                  <th>Rate</th>
+                  <th>Water Bill</th>
+                </tr>
+              </thead>
+              <tbody id="tanker-report-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </section>
 
     <main class="layout">
@@ -60,6 +101,10 @@
           <div>
             <p class="eyebrow small">Current month</p>
             <h2 id="table-title">Monthly billing sheet</h2>
+          </div>
+          <div class="table-search print-hide">
+            <label for="flat-search">Monthly billing table</label>
+            <input id="flat-search" type="search" placeholder="Search flat number">
           </div>
           <div class="settings-inline print-hide">
             <label>
