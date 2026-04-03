@@ -3,135 +3,130 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sainivas Community Billing</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Sai Nivas Monthly Billing</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="app-header">
-    <div class="branding">
-      <div class="logo">S</div>
+  <div class="shell">
+    <header class="hero print-hide">
       <div>
-        <p class="eyebrow">Sainivas Society</p>
-        <h1>Apartment Billing & Maintenance</h1>
-        <p class="lede">Track collections, dues, and maintenance updates for every flat.</p>
+        <p class="eyebrow">Sai Nivas Building</p>
+        <h1>Monthly water and maintenance billing with local month history.</h1>
+        <p class="hero-text">
+          The workbook data is loaded into a local browser database. You can open any month, update
+          current readings and payment status, and create the next month with previous readings
+          carried forward automatically.
+        </p>
       </div>
-    </div>
-    <div class="header-actions">
-      <button id="reset-data" class="ghost">Reset demo data</button>
-      <button id="export-data" class="primary">Export snapshot</button>
-    </div>
-  </header>
-
-  <div id="notice" class="notice" role="status" aria-live="polite"></div>
-
-  <main class="layout">
-    <section class="panel">
-      <h2>Collection Overview</h2>
-      <div class="grid stats" id="overview"></div>
-    </section>
-
-    <section class="panel">
-      <div class="panel-head">
-        <div>
-          <h2>Residents & Dues</h2>
-          <p class="muted">Search, filter, and update maintenance status for each flat.</p>
-        </div>
-        <div class="filters">
-          <input type="search" id="search" placeholder="Search by resident or flat">
-          <select id="status-filter">
-            <option value="all">All statuses</option>
-            <option value="paid">Paid</option>
-            <option value="pending">Pending</option>
-            <option value="overdue">Overdue</option>
-          </select>
-        </div>
+      <div class="hero-actions">
+        <button id="create-next-month" class="button primary" type="button">Create next month</button>
+        <button id="sync-excel" class="button primary" type="button">Sync to Excel</button>
+        <button id="reset-database" class="button ghost" type="button">Reset local DB</button>
+        <button id="export-database" class="button ghost" type="button">Export local DB</button>
       </div>
-      <div class="table" role="table">
-        <div class="table-row head" role="row">
-          <div role="columnheader">Flat</div>
-          <div role="columnheader">Resident</div>
-          <div role="columnheader">Maintenance</div>
-          <div role="columnheader">Outstanding</div>
-          <div role="columnheader">Last Payment</div>
-          <div role="columnheader">Status</div>
-          <div role="columnheader">Notes</div>
-          <div role="columnheader" class="actions-col">Actions</div>
-        </div>
-        <div id="resident-rows"></div>
+    </header>
+
+    <div id="notice" class="notice print-hide" role="status" aria-live="polite"></div>
+
+    <section class="month-bar print-hide">
+      <div class="month-picker">
+        <label for="month-select">Monthly bill</label>
+        <select id="month-select"></select>
+      </div>
+      <div class="month-picker">
+        <label for="due-date">Due date</label>
+        <input id="due-date" type="date">
+      </div>
+      <div class="month-picker">
+        <label for="carry-forward-value">Carry forward balance</label>
+        <input id="carry-forward-value" type="number" step="1">
+      </div>
+      <div class="month-picker">
+        <label for="flat-search">Find flat</label>
+        <input id="flat-search" type="search" placeholder="Search flat number">
       </div>
     </section>
 
-    <section class="panel grid forms">
-      <div>
-        <h2>Record a Maintenance Payment</h2>
-        <p class="muted">Update dues after collecting maintenance fees.</p>
-        <form id="payment-form" class="form">
-          <label>
-            Flat number
-            <input id="payment-flat" list="flat-options" required>
-            <datalist id="flat-options"></datalist>
-          </label>
-          <label>
-            Amount received (₹)
-            <input id="payment-amount" type="number" min="0" step="50" required>
-          </label>
-          <label>
-            Date received
-            <input id="payment-date" type="date" required>
-          </label>
-          <label>
-            Notes
-            <textarea id="payment-notes" rows="2" placeholder="UPI ref, cash, or remarks"></textarea>
-          </label>
-          <button class="primary" type="submit">Save payment</button>
-        </form>
-      </div>
-
-      <div>
-        <h2>Add or Update a Flat</h2>
-        <p class="muted">Keep your roster in sync when residents move in or out.</p>
-        <form id="flat-form" class="form">
-          <label>
-            Flat number
-            <input id="flat-number" required placeholder="e.g. A-101">
-          </label>
-          <label>
-            Resident name
-            <input id="flat-resident" required placeholder="Resident name">
-          </label>
-          <label>
-            Monthly maintenance (₹)
-            <input id="flat-maintenance" type="number" min="0" step="50" required>
-          </label>
-          <label>
-            Contact number
-            <input id="flat-phone" type="tel" placeholder="Optional">
-          </label>
-          <label>
-            Notes
-            <textarea id="flat-notes" rows="2" placeholder="Parking, pets, etc."></textarea>
-          </label>
-          <button class="primary" type="submit">Save flat</button>
-        </form>
-      </div>
+    <section class="summary-strip">
+      <div id="summary-strip" class="summary-grid"></div>
     </section>
-  </main>
 
-  <template id="row-template">
-    <div class="table-row" role="row">
-      <div data-field="flat"></div>
-      <div data-field="resident"></div>
-      <div data-field="maintenance"></div>
-      <div data-field="outstanding"></div>
-      <div data-field="lastPayment"></div>
-      <div data-field="status"></div>
-      <div data-field="notes"></div>
-      <div class="actions-col actions" data-field="actions"></div>
-    </div>
-  </template>
+    <main class="layout">
+      <section class="panel span-2">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow small">Current month</p>
+            <h2 id="table-title">Monthly billing sheet</h2>
+          </div>
+          <div class="settings-inline print-hide">
+            <label>
+              Tankers
+              <input id="tankers-count" type="number" min="0" step="1">
+            </label>
+            <label>
+              Cost per tanker
+              <input id="cost-per-tanker" type="number" min="0" step="50">
+            </label>
+            <label>
+              Common maintenance
+              <input id="default-maintenance" type="number" min="0" step="50">
+            </label>
+            <label>
+              Garbage
+              <input id="default-garbage" type="number" min="0" step="10">
+            </label>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Flat</th>
+                <th>Previous</th>
+                <th>Current</th>
+                <th>Units</th>
+                <th>Water Bill</th>
+                <th>Common Share</th>
+                <th>Maint.</th>
+                <th>Garbage</th>
+                <th>Total Due</th>
+                <th>Received</th>
+                <th>Status</th>
+                <th>Bill</th>
+              </tr>
+            </thead>
+            <tbody id="billing-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel print-hide">
+        <div class="section-head slim">
+          <div>
+            <p class="eyebrow small">Notes</p>
+            <h2 id="expense-title">Monthly expenditures</h2>
+          </div>
+          <button id="add-expense" class="button ghost" type="button">Add expense</button>
+        </div>
+        <div id="expense-list" class="expense-list"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head slim">
+          <div>
+            <p class="eyebrow small">Bill preview</p>
+            <h2 id="bill-heading">Select a flat</h2>
+          </div>
+          <button id="print-bill" class="button primary print-hide" type="button">Print bill</button>
+        </div>
+        <article id="bill-preview" class="bill-preview"></article>
+      </section>
+    </main>
+  </div>
 
   <script src="script.js"></script>
 </body>

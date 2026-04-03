@@ -1,0 +1,3116 @@
+{
+  "fixedFlats": [
+    "Shop-1",
+    "Shop-2",
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "101",
+    "102",
+    "103",
+    "104",
+    "201",
+    "202",
+    "203",
+    "204",
+    "301",
+    "302",
+    "303",
+    "304",
+    "Common"
+  ],
+  "months": [
+    {
+      "id": "2025-02",
+      "label": "Feb-2025",
+      "sheetName": "Feb-2025",
+      "carryForwardLabel": null,
+      "carryForwardValue": "Payment Status",
+      "summary": {},
+      "expenseSections": [
+        {
+          "title": "February 2025 Expenditures",
+          "items": []
+        }
+      ],
+      "flats": [
+        {
+          "id": "shop-1",
+          "flatNumber": "Shop-1",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "shop-2",
+          "flatNumber": "Shop-2",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g1",
+          "flatNumber": "G1",
+          "previousReading": 147.2,
+          "currentReading": 149.3,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g2",
+          "flatNumber": "G2",
+          "previousReading": 228.2,
+          "currentReading": 231.97,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g3",
+          "flatNumber": "G3",
+          "previousReading": 451.5,
+          "currentReading": 459.18,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g4",
+          "flatNumber": "G4",
+          "previousReading": 374.68,
+          "currentReading": 383.4,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "101",
+          "flatNumber": "101",
+          "previousReading": 89.84,
+          "currentReading": 94.09,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "102",
+          "flatNumber": "102",
+          "previousReading": 638.4,
+          "currentReading": 639.64,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "103",
+          "flatNumber": "103",
+          "previousReading": 262.1,
+          "currentReading": 266.92,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "104",
+          "flatNumber": "104",
+          "previousReading": 97.15,
+          "currentReading": 104.73,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "201",
+          "flatNumber": "201",
+          "previousReading": 151.33,
+          "currentReading": 155.19,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "202",
+          "flatNumber": "202",
+          "previousReading": 313.9,
+          "currentReading": 318.14,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "203",
+          "flatNumber": "203",
+          "previousReading": 56.8,
+          "currentReading": 63.74,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "204",
+          "flatNumber": "204",
+          "previousReading": 306.21,
+          "currentReading": 312.94,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "301",
+          "flatNumber": "301",
+          "previousReading": 91.36,
+          "currentReading": 96.64,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "302",
+          "flatNumber": "302",
+          "previousReading": 205.6,
+          "currentReading": 217.55,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "303",
+          "flatNumber": "303",
+          "previousReading": 23.53,
+          "currentReading": 37.44,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "304",
+          "flatNumber": "304",
+          "previousReading": 370.95,
+          "currentReading": 382.35,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "common",
+          "flatNumber": "Common",
+          "previousReading": 381.86,
+          "currentReading": 392.51,
+          "commonMaintenance": 0,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        }
+      ]
+    },
+    {
+      "id": "2025-03",
+      "label": "Mar-2025",
+      "sheetName": "Mar-2025",
+      "carryForwardLabel": null,
+      "carryForwardValue": "Payment Status",
+      "summary": {},
+      "expenseSections": [
+        {
+          "title": "March 2025 Expenditures",
+          "items": []
+        }
+      ],
+      "flats": [
+        {
+          "id": "shop-1",
+          "flatNumber": "Shop-1",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "shop-2",
+          "flatNumber": "Shop-2",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g1",
+          "flatNumber": "G1",
+          "previousReading": 149.3,
+          "currentReading": 151.49,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g2",
+          "flatNumber": "G2",
+          "previousReading": 231.97,
+          "currentReading": 236.28,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g3",
+          "flatNumber": "G3",
+          "previousReading": 459.18,
+          "currentReading": 469.83,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g4",
+          "flatNumber": "G4",
+          "previousReading": 383.4,
+          "currentReading": 388.37,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "101",
+          "flatNumber": "101",
+          "previousReading": 94.09,
+          "currentReading": 96.14,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "102",
+          "flatNumber": "102",
+          "previousReading": 639.64,
+          "currentReading": 639.65,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "103",
+          "flatNumber": "103",
+          "previousReading": 266.92,
+          "currentReading": 274.47,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "104",
+          "flatNumber": "104",
+          "previousReading": 104.73,
+          "currentReading": 125.86,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "201",
+          "flatNumber": "201",
+          "previousReading": 155.19,
+          "currentReading": 158.11,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "202",
+          "flatNumber": "202",
+          "previousReading": 318.14,
+          "currentReading": 324.52,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "203",
+          "flatNumber": "203",
+          "previousReading": 63.74,
+          "currentReading": 72.36,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "204",
+          "flatNumber": "204",
+          "previousReading": 312.94,
+          "currentReading": 318.87,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "301",
+          "flatNumber": "301",
+          "previousReading": 96.64,
+          "currentReading": 106.08,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "302",
+          "flatNumber": "302",
+          "previousReading": 217.55,
+          "currentReading": 224.91,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "303",
+          "flatNumber": "303",
+          "previousReading": 37.44,
+          "currentReading": 52.26,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "304",
+          "flatNumber": "304",
+          "previousReading": 382.35,
+          "currentReading": 393.18,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "common",
+          "flatNumber": "Common",
+          "previousReading": 392.51,
+          "currentReading": 405.79,
+          "commonMaintenance": 0,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        }
+      ]
+    },
+    {
+      "id": "2025-04",
+      "label": "April-2025",
+      "sheetName": "April-2025",
+      "carryForwardLabel": null,
+      "carryForwardValue": "Payment Status",
+      "summary": {},
+      "expenseSections": [
+        {
+          "title": "April 2025 Expenditures",
+          "items": []
+        }
+      ],
+      "flats": [
+        {
+          "id": "shop-1",
+          "flatNumber": "Shop-1",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "shop-2",
+          "flatNumber": "Shop-2",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g1",
+          "flatNumber": "G1",
+          "previousReading": 151.49,
+          "currentReading": 158.38,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g2",
+          "flatNumber": "G2",
+          "previousReading": 236.28,
+          "currentReading": 241.74,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g3",
+          "flatNumber": "G3",
+          "previousReading": 469.83,
+          "currentReading": 478.91,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g4",
+          "flatNumber": "G4",
+          "previousReading": 388.37,
+          "currentReading": 393.71,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "101",
+          "flatNumber": "101",
+          "previousReading": 96.14,
+          "currentReading": 98.77,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "102",
+          "flatNumber": "102",
+          "previousReading": 639.65,
+          "currentReading": 641.48,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "103",
+          "flatNumber": "103",
+          "previousReading": 274.47,
+          "currentReading": 282.74,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "104",
+          "flatNumber": "104",
+          "previousReading": 125.86,
+          "currentReading": 147.13,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "201",
+          "flatNumber": "201",
+          "previousReading": 158.11,
+          "currentReading": 161.66,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "202",
+          "flatNumber": "202",
+          "previousReading": 324.52,
+          "currentReading": 331.25,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "203",
+          "flatNumber": "203",
+          "previousReading": 72.36,
+          "currentReading": 79.63,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "204",
+          "flatNumber": "204",
+          "previousReading": 318.87,
+          "currentReading": 324.25,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "301",
+          "flatNumber": "301",
+          "previousReading": 106.08,
+          "currentReading": 112.6,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "302",
+          "flatNumber": "302",
+          "previousReading": 224.91,
+          "currentReading": 234.46,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "303",
+          "flatNumber": "303",
+          "previousReading": 52.26,
+          "currentReading": 68.29,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "304",
+          "flatNumber": "304",
+          "previousReading": 393.18,
+          "currentReading": 406.55,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "common",
+          "flatNumber": "Common",
+          "previousReading": 405.79,
+          "currentReading": 418.2,
+          "commonMaintenance": 0,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        }
+      ]
+    },
+    {
+      "id": "2025-05",
+      "label": "May-2025",
+      "sheetName": "May-2025",
+      "carryForwardLabel": null,
+      "carryForwardValue": "Payment Status",
+      "summary": {},
+      "expenseSections": [
+        {
+          "title": "May 2025 Expenditures",
+          "items": []
+        }
+      ],
+      "flats": [
+        {
+          "id": "shop-1",
+          "flatNumber": "Shop-1",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "shop-2",
+          "flatNumber": "Shop-2",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g1",
+          "flatNumber": "G1",
+          "previousReading": 158.38,
+          "currentReading": 168,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g2",
+          "flatNumber": "G2",
+          "previousReading": 241.74,
+          "currentReading": 248.67,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g3",
+          "flatNumber": "G3",
+          "previousReading": 478.91,
+          "currentReading": 482.25,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g4",
+          "flatNumber": "G4",
+          "previousReading": 393.71,
+          "currentReading": 398.86,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "101",
+          "flatNumber": "101",
+          "previousReading": 98.77,
+          "currentReading": 100.28,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "102",
+          "flatNumber": "102",
+          "previousReading": 641.48,
+          "currentReading": 641.84,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "103",
+          "flatNumber": "103",
+          "previousReading": 282.74,
+          "currentReading": 290.74,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "104",
+          "flatNumber": "104",
+          "previousReading": 147.13,
+          "currentReading": 157.71,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "201",
+          "flatNumber": "201",
+          "previousReading": 161.66,
+          "currentReading": 165.47,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "202",
+          "flatNumber": "202",
+          "previousReading": 331.25,
+          "currentReading": 340.83,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "203",
+          "flatNumber": "203",
+          "previousReading": 79.63,
+          "currentReading": 89.44,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "204",
+          "flatNumber": "204",
+          "previousReading": 324.25,
+          "currentReading": 330.18,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "301",
+          "flatNumber": "301",
+          "previousReading": 112.6,
+          "currentReading": 119.26,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "302",
+          "flatNumber": "302",
+          "previousReading": 234.46,
+          "currentReading": 243.57,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "303",
+          "flatNumber": "303",
+          "previousReading": 68.29,
+          "currentReading": 86.25,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "304",
+          "flatNumber": "304",
+          "previousReading": 406.55,
+          "currentReading": 419.67,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "common",
+          "flatNumber": "Common",
+          "previousReading": 418.2,
+          "currentReading": 431.99,
+          "commonMaintenance": 0,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        }
+      ]
+    },
+    {
+      "id": "2025-06",
+      "label": "June-2025",
+      "sheetName": "June-2025",
+      "carryForwardLabel": "Difference Amount",
+      "carryForwardValue": "Payment Status",
+      "summary": {},
+      "expenseSections": [
+        {
+          "title": "June 2025 Expenditures",
+          "items": []
+        }
+      ],
+      "flats": [
+        {
+          "id": "shop-1",
+          "flatNumber": "Shop-1",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": 300
+        },
+        {
+          "id": "shop-2",
+          "flatNumber": "Shop-2",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": 300
+        },
+        {
+          "id": "g1",
+          "flatNumber": "G1",
+          "previousReading": 168,
+          "currentReading": 172.7,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 1919
+        },
+        {
+          "id": "g2",
+          "flatNumber": "G2",
+          "previousReading": 248.67,
+          "currentReading": 248.67,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 1250
+        },
+        {
+          "id": "g3",
+          "flatNumber": "G3",
+          "previousReading": 482.25,
+          "currentReading": 483,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 1357
+        },
+        {
+          "id": "g4",
+          "flatNumber": "G4",
+          "previousReading": 398.86,
+          "currentReading": 408.67,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 2647
+        },
+        {
+          "id": "101",
+          "flatNumber": "101",
+          "previousReading": 100.28,
+          "currentReading": 101.96,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 1489
+        },
+        {
+          "id": "102",
+          "flatNumber": "102",
+          "previousReading": 641.84,
+          "currentReading": 643.69,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 1513
+        },
+        {
+          "id": "103",
+          "flatNumber": "103",
+          "previousReading": 290.74,
+          "currentReading": 295.38,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 1911
+        },
+        {
+          "id": "104",
+          "flatNumber": "104",
+          "previousReading": 157.71,
+          "currentReading": 167.28,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 2613
+        },
+        {
+          "id": "201",
+          "flatNumber": "201",
+          "previousReading": 165.47,
+          "currentReading": 169.23,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 1785
+        },
+        {
+          "id": "202",
+          "flatNumber": "202",
+          "previousReading": 340.83,
+          "currentReading": 347.75,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 2236
+        },
+        {
+          "id": "203",
+          "flatNumber": "203",
+          "previousReading": 89.44,
+          "currentReading": 97.29,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 2368
+        },
+        {
+          "id": "204",
+          "flatNumber": "204",
+          "previousReading": 330.18,
+          "currentReading": 337.09,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 2234
+        },
+        {
+          "id": "301",
+          "flatNumber": "301",
+          "previousReading": 119.26,
+          "currentReading": 120.55,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 1434
+        },
+        {
+          "id": "302",
+          "flatNumber": "302",
+          "previousReading": 243.57,
+          "currentReading": 250.94,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 2300
+        },
+        {
+          "id": "303",
+          "flatNumber": "303",
+          "previousReading": 86.25,
+          "currentReading": 102.05,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 3500
+        },
+        {
+          "id": "304",
+          "flatNumber": "304",
+          "previousReading": 419.67,
+          "currentReading": 433.21,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 3178
+        },
+        {
+          "id": "common",
+          "flatNumber": "Common",
+          "previousReading": 431.99,
+          "currentReading": 445.09,
+          "commonMaintenance": 0,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        }
+      ]
+    },
+    {
+      "id": "2025-07",
+      "label": "July-2025",
+      "sheetName": "July-2025",
+      "carryForwardLabel": null,
+      "carryForwardValue": "Payment Status",
+      "summary": {},
+      "expenseSections": [
+        {
+          "title": "July 2025 Expenditures",
+          "items": []
+        }
+      ],
+      "flats": [
+        {
+          "id": "shop-1",
+          "flatNumber": "Shop-1",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": 300
+        },
+        {
+          "id": "shop-2",
+          "flatNumber": "Shop-2",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": 300
+        },
+        {
+          "id": "g1",
+          "flatNumber": "G1",
+          "previousReading": 172.7,
+          "currentReading": 177.59,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 2323
+        },
+        {
+          "id": "g2",
+          "flatNumber": "G2",
+          "previousReading": 248.67,
+          "currentReading": 254.47,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 2278
+        },
+        {
+          "id": "g3",
+          "flatNumber": "G3",
+          "previousReading": 483,
+          "currentReading": 491.65,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 2817
+        },
+        {
+          "id": "g4",
+          "flatNumber": "G4",
+          "previousReading": 408.67,
+          "currentReading": 414.2,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 2661
+        },
+        {
+          "id": "101",
+          "flatNumber": "101",
+          "previousReading": 101.96,
+          "currentReading": 103.38,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 1576
+        },
+        {
+          "id": "102",
+          "flatNumber": "102",
+          "previousReading": 643.69,
+          "currentReading": 645.49,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 1651
+        },
+        {
+          "id": "103",
+          "flatNumber": "103",
+          "previousReading": 295.38,
+          "currentReading": 302.63,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 2739
+        },
+        {
+          "id": "104",
+          "flatNumber": "104",
+          "previousReading": 167.28,
+          "currentReading": 181.12,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 4123
+        },
+        {
+          "id": "201",
+          "flatNumber": "201",
+          "previousReading": 169.23,
+          "currentReading": 172.13,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 1929
+        },
+        {
+          "id": "202",
+          "flatNumber": "202",
+          "previousReading": 347.75,
+          "currentReading": 352.53,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 2401
+        },
+        {
+          "id": "203",
+          "flatNumber": "203",
+          "previousReading": 97.29,
+          "currentReading": 100.4,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 2145
+        },
+        {
+          "id": "204",
+          "flatNumber": "204",
+          "previousReading": 337.09,
+          "currentReading": 343.37,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 2667
+        },
+        {
+          "id": "301",
+          "flatNumber": "301",
+          "previousReading": 120.55,
+          "currentReading": 130.23,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 3022
+        },
+        {
+          "id": "302",
+          "flatNumber": "302",
+          "previousReading": 250.94,
+          "currentReading": 261.94,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 3524
+        },
+        {
+          "id": "303",
+          "flatNumber": "303",
+          "previousReading": 102.05,
+          "currentReading": 120.37,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 5190
+        },
+        {
+          "id": "304",
+          "flatNumber": "304",
+          "previousReading": 433.21,
+          "currentReading": 446.65,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": 4227
+        },
+        {
+          "id": "common",
+          "flatNumber": "Common",
+          "previousReading": 445.09,
+          "currentReading": 457.52,
+          "commonMaintenance": 0,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        }
+      ]
+    },
+    {
+      "id": "2025-08",
+      "label": "Aug-2025",
+      "sheetName": "Aug-2025",
+      "carryForwardLabel": "Payment Status",
+      "carryForwardValue": "Balance amount (July)-25",
+      "summary": {},
+      "expenseSections": [
+        {
+          "title": "August 2025 Expenditures",
+          "items": []
+        }
+      ],
+      "flats": [
+        {
+          "id": "shop-1",
+          "flatNumber": "Shop-1",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "shop-2",
+          "flatNumber": "Shop-2",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g1",
+          "flatNumber": "G1",
+          "previousReading": 177.59,
+          "currentReading": 183.63,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g2",
+          "flatNumber": "G2",
+          "previousReading": 254.47,
+          "currentReading": 260.68,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g3",
+          "flatNumber": "G3",
+          "previousReading": 491.65,
+          "currentReading": 503.49,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g4",
+          "flatNumber": "G4",
+          "previousReading": 414.2,
+          "currentReading": 419.93,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "101",
+          "flatNumber": "101",
+          "previousReading": 103.38,
+          "currentReading": 105.48,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "102",
+          "flatNumber": "102",
+          "previousReading": 645.49,
+          "currentReading": 646.31,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "103",
+          "flatNumber": "103",
+          "previousReading": 302.63,
+          "currentReading": 317.71,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "104",
+          "flatNumber": "104",
+          "previousReading": 181.12,
+          "currentReading": 196.49,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "201",
+          "flatNumber": "201",
+          "previousReading": 172.13,
+          "currentReading": 178.24,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "202",
+          "flatNumber": "202",
+          "previousReading": 352.53,
+          "currentReading": 358.92,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "203",
+          "flatNumber": "203",
+          "previousReading": 100.4,
+          "currentReading": 110.61,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "204",
+          "flatNumber": "204",
+          "previousReading": 343.37,
+          "currentReading": 350.16,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "301",
+          "flatNumber": "301",
+          "previousReading": 130.23,
+          "currentReading": 139.39,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "302",
+          "flatNumber": "302",
+          "previousReading": 261.94,
+          "currentReading": 271.3,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "303",
+          "flatNumber": "303",
+          "previousReading": 120.37,
+          "currentReading": 133.03,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "304",
+          "flatNumber": "304",
+          "previousReading": 446.65,
+          "currentReading": 458.08,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "common",
+          "flatNumber": "Common",
+          "previousReading": 457.52,
+          "currentReading": 468.88,
+          "commonMaintenance": 0,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        }
+      ]
+    },
+    {
+      "id": "2025-09",
+      "label": "SEP-2025",
+      "sheetName": "SEP-2025",
+      "carryForwardLabel": "Payment Status",
+      "carryForwardValue": "Balance amount (Aug)-25",
+      "summary": {},
+      "expenseSections": [
+        {
+          "title": "September 2025 Expenditures",
+          "items": []
+        }
+      ],
+      "flats": [
+        {
+          "id": "shop-1",
+          "flatNumber": "Shop-1",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "shop-2",
+          "flatNumber": "Shop-2",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g1",
+          "flatNumber": "G1",
+          "previousReading": 183.63,
+          "currentReading": 189.3,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g2",
+          "flatNumber": "G2",
+          "previousReading": 260.68,
+          "currentReading": 266.14,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g3",
+          "flatNumber": "G3",
+          "previousReading": 503.49,
+          "currentReading": 514.13,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g4",
+          "flatNumber": "G4",
+          "previousReading": 419.93,
+          "currentReading": 427,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "101",
+          "flatNumber": "101",
+          "previousReading": 105.48,
+          "currentReading": 106.48,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "102",
+          "flatNumber": "102",
+          "previousReading": 646.31,
+          "currentReading": 646.96,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "103",
+          "flatNumber": "103",
+          "previousReading": 317.71,
+          "currentReading": 324.93,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "104",
+          "flatNumber": "104",
+          "previousReading": 196.49,
+          "currentReading": 208.19,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "201",
+          "flatNumber": "201",
+          "previousReading": 178.24,
+          "currentReading": 180.97,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "202",
+          "flatNumber": "202",
+          "previousReading": 358.92,
+          "currentReading": 365.27,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "203",
+          "flatNumber": "203",
+          "previousReading": 110.61,
+          "currentReading": 120.94,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "204",
+          "flatNumber": "204",
+          "previousReading": 350.16,
+          "currentReading": 357.09,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "301",
+          "flatNumber": "301",
+          "previousReading": 139.39,
+          "currentReading": 145.74,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "302",
+          "flatNumber": "302",
+          "previousReading": 271.3,
+          "currentReading": 288.82,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "303",
+          "flatNumber": "303",
+          "previousReading": 133.03,
+          "currentReading": 142.57,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "304",
+          "flatNumber": "304",
+          "previousReading": 458.08,
+          "currentReading": 468.36,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "common",
+          "flatNumber": "Common",
+          "previousReading": 468.88,
+          "currentReading": 480.14,
+          "commonMaintenance": 0,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        }
+      ]
+    },
+    {
+      "id": "2025-10",
+      "label": "OCT-2025",
+      "sheetName": "OCT-2025",
+      "carryForwardLabel": "dussara bonus for watch man",
+      "carryForwardValue": "Balance amount (sep)-25",
+      "summary": {},
+      "expenseSections": [
+        {
+          "title": "October 2025 Expenditures",
+          "items": []
+        }
+      ],
+      "flats": [
+        {
+          "id": "shop-1",
+          "flatNumber": "Shop-1",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "shop-2",
+          "flatNumber": "Shop-2",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g1",
+          "flatNumber": "G1",
+          "previousReading": 189.3,
+          "currentReading": 195.15,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g2",
+          "flatNumber": "G2",
+          "previousReading": 266.14,
+          "currentReading": 269.71,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g3",
+          "flatNumber": "G3",
+          "previousReading": 514.13,
+          "currentReading": 523.61,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g4",
+          "flatNumber": "G4",
+          "previousReading": 427,
+          "currentReading": 434.12,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "101",
+          "flatNumber": "101",
+          "previousReading": 106.48,
+          "currentReading": 107.67,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "102",
+          "flatNumber": "102",
+          "previousReading": 646.96,
+          "currentReading": 648.17,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "103",
+          "flatNumber": "103",
+          "previousReading": 324.93,
+          "currentReading": 331.49,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "104",
+          "flatNumber": "104",
+          "previousReading": 208.19,
+          "currentReading": 218.38,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "201",
+          "flatNumber": "201",
+          "previousReading": 180.97,
+          "currentReading": 186.16,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "202",
+          "flatNumber": "202",
+          "previousReading": 365.27,
+          "currentReading": 371.37,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "203",
+          "flatNumber": "203",
+          "previousReading": 120.94,
+          "currentReading": 128.87,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "204",
+          "flatNumber": "204",
+          "previousReading": 357.09,
+          "currentReading": 362.78,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "301",
+          "flatNumber": "301",
+          "previousReading": 145.74,
+          "currentReading": 150.06,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "302",
+          "flatNumber": "302",
+          "previousReading": 288.82,
+          "currentReading": 298.43,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "303",
+          "flatNumber": "303",
+          "previousReading": 142.57,
+          "currentReading": 152.01,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "304",
+          "flatNumber": "304",
+          "previousReading": 468.36,
+          "currentReading": 479.68,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "common",
+          "flatNumber": "Common",
+          "previousReading": 480.14,
+          "currentReading": 490.08,
+          "commonMaintenance": 0,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        }
+      ]
+    },
+    {
+      "id": "2025-11",
+      "label": "Nov-2025",
+      "sheetName": "Nov-2025",
+      "carryForwardLabel": "Balance amount (Oct)-25",
+      "carryForwardValue": 12058,
+      "summary": {},
+      "expenseSections": [
+        {
+          "title": "November 2025 Expenditures",
+          "items": []
+        }
+      ],
+      "flats": [
+        {
+          "id": "shop-1",
+          "flatNumber": "Shop-1",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "shop-2",
+          "flatNumber": "Shop-2",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "g1",
+          "flatNumber": "G1",
+          "previousReading": 195.15,
+          "currentReading": 198.03,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "g2",
+          "flatNumber": "G2",
+          "previousReading": 269.71,
+          "currentReading": 274.22,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "g3",
+          "flatNumber": "G3",
+          "previousReading": 523.61,
+          "currentReading": 535.33,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "g4",
+          "flatNumber": "G4",
+          "previousReading": 434.12,
+          "currentReading": 442.87,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "101",
+          "flatNumber": "101",
+          "previousReading": 107.67,
+          "currentReading": 108.72,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "102",
+          "flatNumber": "102",
+          "previousReading": 648.17,
+          "currentReading": 655.98,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "103",
+          "flatNumber": "103",
+          "previousReading": 331.49,
+          "currentReading": 341.83,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "104",
+          "flatNumber": "104",
+          "previousReading": 218.38,
+          "currentReading": 229.61,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "201",
+          "flatNumber": "201",
+          "previousReading": 186.16,
+          "currentReading": 195.46,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "202",
+          "flatNumber": "202",
+          "previousReading": 371.37,
+          "currentReading": 377.81,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "203",
+          "flatNumber": "203",
+          "previousReading": 128.87,
+          "currentReading": 138,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "204",
+          "flatNumber": "204",
+          "previousReading": 362.78,
+          "currentReading": 372.34,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "301",
+          "flatNumber": "301",
+          "previousReading": 150.06,
+          "currentReading": 156.27,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "302",
+          "flatNumber": "302",
+          "previousReading": 298.43,
+          "currentReading": 306.19,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "303",
+          "flatNumber": "303",
+          "previousReading": 152.01,
+          "currentReading": 169.66,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "304",
+          "flatNumber": "304",
+          "previousReading": 479.68,
+          "currentReading": 489.97,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "common",
+          "flatNumber": "Common",
+          "previousReading": 490.08,
+          "currentReading": 502.32,
+          "commonMaintenance": 0,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        }
+      ]
+    },
+    {
+      "id": "2025-12",
+      "label": "Dec-2025",
+      "sheetName": "Dec-2025",
+      "carryForwardLabel": "Balance amount (nov)-25 After Expendatures",
+      "carryForwardValue": "15784",
+      "summary": {},
+      "expenseSections": [
+        {
+          "title": "December 2025 Expenditures",
+          "items": []
+        }
+      ],
+      "flats": [
+        {
+          "id": "shop-1",
+          "flatNumber": "Shop-1",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "shop-2",
+          "flatNumber": "Shop-2",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "g1",
+          "flatNumber": "G1",
+          "previousReading": 198.03,
+          "currentReading": 203.13,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "g2",
+          "flatNumber": "G2",
+          "previousReading": 274.22,
+          "currentReading": 279.37,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "g3",
+          "flatNumber": "G3",
+          "previousReading": 535.33,
+          "currentReading": 550.58,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "g4",
+          "flatNumber": "G4",
+          "previousReading": 442.87,
+          "currentReading": 450.36,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "101",
+          "flatNumber": "101",
+          "previousReading": 108.72,
+          "currentReading": 109.83,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "102",
+          "flatNumber": "102",
+          "previousReading": 655.98,
+          "currentReading": 661.34,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "103",
+          "flatNumber": "103",
+          "previousReading": 341.83,
+          "currentReading": 344.27,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "104",
+          "flatNumber": "104",
+          "previousReading": 229.61,
+          "currentReading": 244.69,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "201",
+          "flatNumber": "201",
+          "previousReading": 195.46,
+          "currentReading": 203.55,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "202",
+          "flatNumber": "202",
+          "previousReading": 377.81,
+          "currentReading": 383.41,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "203",
+          "flatNumber": "203",
+          "previousReading": 138,
+          "currentReading": 148,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "204",
+          "flatNumber": "204",
+          "previousReading": 372.34,
+          "currentReading": 379.09,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "301",
+          "flatNumber": "301",
+          "previousReading": 156.27,
+          "currentReading": 160.92,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "302",
+          "flatNumber": "302",
+          "previousReading": 306.19,
+          "currentReading": 316.02,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "303",
+          "flatNumber": "303",
+          "previousReading": 169.66,
+          "currentReading": 179.26,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "304",
+          "flatNumber": "304",
+          "previousReading": 489.97,
+          "currentReading": 498.37,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "common",
+          "flatNumber": "Common",
+          "previousReading": 502.32,
+          "currentReading": 514.66,
+          "commonMaintenance": 0,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        }
+      ]
+    },
+    {
+      "id": "2026-01",
+      "label": "Jan-2026",
+      "sheetName": "Jan-2026",
+      "carryForwardLabel": "Balance amount (nov)-25 COD: 31-12-2025",
+      "carryForwardValue": "19301",
+      "summary": {},
+      "expenseSections": [
+        {
+          "title": "January 2026 Expenditures",
+          "items": []
+        }
+      ],
+      "flats": [
+        {
+          "id": "shop-1",
+          "flatNumber": "Shop-1",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "shop-2",
+          "flatNumber": "Shop-2",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "g1",
+          "flatNumber": "G1",
+          "previousReading": 0,
+          "currentReading": 5.037,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "g2",
+          "flatNumber": "G2",
+          "previousReading": 279.37,
+          "currentReading": 286.04,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "g3",
+          "flatNumber": "G3",
+          "previousReading": 550.58,
+          "currentReading": 561.83,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "g4",
+          "flatNumber": "G4",
+          "previousReading": 450.36,
+          "currentReading": 458.46,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "101",
+          "flatNumber": "101",
+          "previousReading": 109.83,
+          "currentReading": 111.41,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "102",
+          "flatNumber": "102",
+          "previousReading": 661.34,
+          "currentReading": 666.88,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "103",
+          "flatNumber": "103",
+          "previousReading": 344.27,
+          "currentReading": 355.18,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "104",
+          "flatNumber": "104",
+          "previousReading": 244.69,
+          "currentReading": 259.09,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "201",
+          "flatNumber": "201",
+          "previousReading": 203.55,
+          "currentReading": 210.21,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "202",
+          "flatNumber": "202",
+          "previousReading": 383.41,
+          "currentReading": 390.75,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "203",
+          "flatNumber": "203",
+          "previousReading": 0,
+          "currentReading": 8.589,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "204",
+          "flatNumber": "204",
+          "previousReading": 379.09,
+          "currentReading": 385.45,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "301",
+          "flatNumber": "301",
+          "previousReading": 160.92,
+          "currentReading": 166.67,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "302",
+          "flatNumber": "302",
+          "previousReading": 316.02,
+          "currentReading": 327.09,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "303",
+          "flatNumber": "303",
+          "previousReading": 179.26,
+          "currentReading": 188.411,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "304",
+          "flatNumber": "304",
+          "previousReading": 498.37,
+          "currentReading": 509.79,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "common",
+          "flatNumber": "Common",
+          "previousReading": 514.66,
+          "currentReading": 527.01,
+          "commonMaintenance": 0,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        }
+      ]
+    },
+    {
+      "id": "2026-02",
+      "label": "Feb-2026",
+      "sheetName": "Feb-2026",
+      "carryForwardLabel": "Balance amount (jan)-26 COD: 31-01-2026",
+      "carryForwardValue": "17199",
+      "summary": {},
+      "expenseSections": [
+        {
+          "title": "February 2026 Expenditures",
+          "items": []
+        }
+      ],
+      "flats": [
+        {
+          "id": "shop-1",
+          "flatNumber": "Shop-1",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "shop-2",
+          "flatNumber": "Shop-2",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "g1",
+          "flatNumber": "G1",
+          "previousReading": 5.037,
+          "currentReading": 8.651,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "g2",
+          "flatNumber": "G2",
+          "previousReading": 286.04,
+          "currentReading": 289.36,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "g3",
+          "flatNumber": "G3",
+          "previousReading": 561.83,
+          "currentReading": 570.04,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "g4",
+          "flatNumber": "G4",
+          "previousReading": 458.46,
+          "currentReading": 469.17,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "101",
+          "flatNumber": "101",
+          "previousReading": 111.41,
+          "currentReading": 111.92,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "102",
+          "flatNumber": "102",
+          "previousReading": 666.88,
+          "currentReading": 671.2,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "103",
+          "flatNumber": "103",
+          "previousReading": 355.18,
+          "currentReading": 364.14,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "104",
+          "flatNumber": "104",
+          "previousReading": 259.09,
+          "currentReading": 266.39,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "201",
+          "flatNumber": "201",
+          "previousReading": 210.21,
+          "currentReading": 218.59,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "202",
+          "flatNumber": "202",
+          "previousReading": 390.75,
+          "currentReading": 394.73,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "203",
+          "flatNumber": "203",
+          "previousReading": 8.589,
+          "currentReading": 14.211,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "204",
+          "flatNumber": "204",
+          "previousReading": 385.45,
+          "currentReading": 390.7,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "301",
+          "flatNumber": "301",
+          "previousReading": 166.67,
+          "currentReading": 171.14,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "302",
+          "flatNumber": "302",
+          "previousReading": 327.09,
+          "currentReading": 337.82,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "303",
+          "flatNumber": "303",
+          "previousReading": 188.411,
+          "currentReading": 198.193,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "304",
+          "flatNumber": "304",
+          "previousReading": 509.79,
+          "currentReading": 521.96,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "common",
+          "flatNumber": "Common",
+          "previousReading": 527.01,
+          "currentReading": 527.01,
+          "commonMaintenance": 0,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        }
+      ]
+    },
+    {
+      "id": "2026-03",
+      "label": "March-2026",
+      "sheetName": "March-2026",
+      "carryForwardLabel": "Balance amount (Feb)-26 COD: 28-02-2026",
+      "carryForwardValue": "14470",
+      "summary": {},
+      "expenseSections": [
+        {
+          "title": "March 2026 Expenditures",
+          "items": []
+        }
+      ],
+      "flats": [
+        {
+          "id": "shop-1",
+          "flatNumber": "Shop-1",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "shop-2",
+          "flatNumber": "Shop-2",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "g1",
+          "flatNumber": "G1",
+          "previousReading": 8.651,
+          "currentReading": 11.106,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "g2",
+          "flatNumber": "G2",
+          "previousReading": 289.36,
+          "currentReading": 295.25,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "g3",
+          "flatNumber": "G3",
+          "previousReading": 570.04,
+          "currentReading": 578.51,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "g4",
+          "flatNumber": "G4",
+          "previousReading": 469.17,
+          "currentReading": 478.63,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "101",
+          "flatNumber": "101",
+          "previousReading": 111.92,
+          "currentReading": 117.16,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "102",
+          "flatNumber": "102",
+          "previousReading": 671.2,
+          "currentReading": 676.42,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "103",
+          "flatNumber": "103",
+          "previousReading": 364.14,
+          "currentReading": 372.92,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "104",
+          "flatNumber": "104",
+          "previousReading": 266.39,
+          "currentReading": 275.81,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "201",
+          "flatNumber": "201",
+          "previousReading": 218.59,
+          "currentReading": 224.29,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "202",
+          "flatNumber": "202",
+          "previousReading": 394.73,
+          "currentReading": 399.55,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "203",
+          "flatNumber": "203",
+          "previousReading": 14.211,
+          "currentReading": 19.997,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "204",
+          "flatNumber": "204",
+          "previousReading": 390.7,
+          "currentReading": 396.4,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "301",
+          "flatNumber": "301",
+          "previousReading": 171.14,
+          "currentReading": 176.29,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "302",
+          "flatNumber": "302",
+          "previousReading": 337.82,
+          "currentReading": 347.45,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "303",
+          "flatNumber": "303",
+          "previousReading": 198.193,
+          "currentReading": 207.351,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "304",
+          "flatNumber": "304",
+          "previousReading": 521.96,
+          "currentReading": 532.05,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": "Paid"
+        },
+        {
+          "id": "common",
+          "flatNumber": "Common",
+          "previousReading": 527.01,
+          "currentReading": 549.11,
+          "commonMaintenance": 0,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        }
+      ]
+    },
+    {
+      "id": "2026-04",
+      "label": "April-2026",
+      "sheetName": "April-2026",
+      "carryForwardLabel": "Balance amount (Mar)-26 COD: 31-03-2026",
+      "carryForwardValue": "14470",
+      "summary": {},
+      "expenseSections": [
+        {
+          "title": "April 2026 Expenditures",
+          "items": []
+        }
+      ],
+      "flats": [
+        {
+          "id": "shop-1",
+          "flatNumber": "Shop-1",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "shop-2",
+          "flatNumber": "Shop-2",
+          "previousReading": "NA",
+          "currentReading": "NA",
+          "commonMaintenance": 300,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g1",
+          "flatNumber": "G1",
+          "previousReading": 11.106,
+          "currentReading": 15.635,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g2",
+          "flatNumber": "G2",
+          "previousReading": 295.25,
+          "currentReading": 300.08,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g3",
+          "flatNumber": "G3",
+          "previousReading": 578.51,
+          "currentReading": 588.81,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "g4",
+          "flatNumber": "G4",
+          "previousReading": 478.63,
+          "currentReading": 490.63,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "101",
+          "flatNumber": "101",
+          "previousReading": 117.16,
+          "currentReading": 122.4,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "102",
+          "flatNumber": "102",
+          "previousReading": 676.42,
+          "currentReading": 682.02,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "103",
+          "flatNumber": "103",
+          "previousReading": 372.92,
+          "currentReading": 382.75,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "104",
+          "flatNumber": "104",
+          "previousReading": 275.81,
+          "currentReading": 285.62,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "201",
+          "flatNumber": "201",
+          "previousReading": 224.29,
+          "currentReading": 231.5,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "202",
+          "flatNumber": "202",
+          "previousReading": 399.55,
+          "currentReading": 405.17,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "203",
+          "flatNumber": "203",
+          "previousReading": 19.997,
+          "currentReading": 28.402,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "204",
+          "flatNumber": "204",
+          "previousReading": 396.4,
+          "currentReading": 405.98,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "301",
+          "flatNumber": "301",
+          "previousReading": 176.29,
+          "currentReading": 180.42,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "302",
+          "flatNumber": "302",
+          "previousReading": 347.45,
+          "currentReading": 359.27,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "303",
+          "flatNumber": "303",
+          "previousReading": 207.351,
+          "currentReading": 219.435,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "304",
+          "flatNumber": "304",
+          "previousReading": 532.05,
+          "currentReading": 543.49,
+          "commonMaintenance": 1200,
+          "garbageAmount": 50,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        },
+        {
+          "id": "common",
+          "flatNumber": "Common",
+          "previousReading": 549.11,
+          "currentReading": 549.11,
+          "commonMaintenance": 0,
+          "garbageAmount": 0,
+          "receivedAmount": 0,
+          "paymentStatus": ""
+        }
+      ]
+    }
+  ],
+  "latestMonthId": "2026-04"
+}
