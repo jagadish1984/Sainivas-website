@@ -28,6 +28,7 @@ const dom = {
   resetDatabase: document.getElementById("reset-database"),
   exportDatabase: document.getElementById("export-database"),
   addExpense: document.getElementById("add-expense"),
+  addCommonExpenses: document.getElementById("add-common-expenses"),
   printBill: document.getElementById("print-bill"),
 };
 
@@ -44,6 +45,15 @@ const numberFormat = new Intl.NumberFormat("en-IN", {
 
 let db;
 let appState;
+
+const commonExpensePresets = [
+  { label: "Watch man salary", defaultAmount: 6500 },
+  { label: "Majeera Water Bill", defaultAmount: 2044 },
+  { label: "Garbage", defaultAmount: 800 },
+  { label: "Common Power Bill", defaultAmount: 0 },
+  { label: "Previous Month tanker bill payment", defaultAmount: 0 },
+  { label: "Custom", defaultAmount: 0 },
+];
 
 function escapeHtml(value) {
   return String(value ?? "")
@@ -194,6 +204,7 @@ function chooseExpenseItems(sourceMonth) {
       label: item.label || "",
       amount: safeAmount(item.amount),
       status: item.status || "",
+      paymentDate: item.paymentDate || "",
     }));
 }
 
@@ -475,8 +486,22 @@ function renderExpenses(month) {
   dom.expenseList.innerHTML = month.expenses
     .map((item) => `
       <div class="expense-row">
-        <input type="text" value="${item.label || ""}" data-action="expense-field" data-id="${item.id}" data-field="label">
+        <select data-action="expense-field" data-id="${item.id}" data-field="label">
+          ${commonExpensePresets
+            .map((preset) => {
+              const selected = preset.label === (item.label || "Custom") ? "selected" : "";
+              return `<option value="${preset.label}" ${selected}>${preset.label}</option>`;
+            })
+            .join("")}
+        </select>
         <input type="number" min="0" step="1" value="${item.amount || 0}" data-action="expense-field" data-id="${item.id}" data-field="amount">
+        <select data-action="expense-field" data-id="${item.id}" data-field="status">
+          <option value="" ${!item.status ? "selected" : ""}>Status</option>
+          <option value="Paid" ${item.status === "Paid" ? "selected" : ""}>Paid</option>
+          <option value="Pending" ${item.status === "Pending" ? "selected" : ""}>Pending</option>
+          <option value="Part Payment" ${item.status === "Part Payment" ? "selected" : ""}>Part Payment</option>
+        </select>
+        <input type="date" value="${item.paymentDate || ""}" data-action="expense-field" data-id="${item.id}" data-field="paymentDate">
         <button class="button ghost" type="button" data-action="remove-expense" data-id="${item.id}">Remove</button>
       </div>
     `)
@@ -608,7 +633,19 @@ function updateFlat(month, flatId, field, value) {
 function updateExpense(month, expenseId, field, value) {
   const item = month.expenses.find((expense) => expense.id === expenseId);
   if (!item) return;
-  item[field] = field === "label" ? value : Number(value || 0);
+  if (field === "label") {
+    item.label = value;
+    const preset = commonExpensePresets.find((entry) => entry.label === value);
+    if (preset && (!item.amount || item.amount === 0)) {
+      item.amount = preset.defaultAmount || 0;
+    }
+    return;
+  }
+  if (field === "amount") {
+    item.amount = Number(value || 0);
+    return;
+  }
+  item[field] = value;
 }
 
 function createMonthFromPrevious(previousMonth) {
@@ -664,10 +701,27 @@ function createMonthFromPrevious(previousMonth) {
 function addExpense(month) {
   month.expenses.push({
     id: `expense-${Date.now()}`,
-    label: "",
+    label: "Custom",
     amount: 0,
     status: "",
+    paymentDate: "",
   });
+}
+
+function addCommonExpenses(month) {
+  const existing = new Set(month.expenses.map((item) => item.label));
+  commonExpensePresets
+    .filter((item) => item.label !== "Custom")
+    .forEach((preset) => {
+      if (existing.has(preset.label)) return;
+      month.expenses.push({
+        id: `expense-${slugify(preset.label)}-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+        label: preset.label,
+        amount: preset.defaultAmount,
+        status: "",
+        paymentDate: "",
+      });
+    });
 }
 
 function removeExpense(month, expenseId) {
@@ -828,6 +882,11 @@ function attachEvents() {
 
   dom.addExpense.addEventListener("click", async () => {
     addExpense(monthRecord());
+    await render();
+  });
+
+  dom.addCommonExpenses.addEventListener("click", async () => {
+    addCommonExpenses(monthRecord());
     await render();
   });
 

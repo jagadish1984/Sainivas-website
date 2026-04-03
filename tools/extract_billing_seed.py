@@ -64,13 +64,15 @@ def parse_expense_sections(ws):
                 label = ws.cell(row, col).value
                 amount = ws.cell(row, col + 1).value if col + 1 <= ws.max_column else None
                 status = ws.cell(row, col + 2).value if col + 2 <= ws.max_column else None
-                if label is None and amount is None and status is None:
+                payment_date = ws.cell(row, col + 3).value if col + 3 <= ws.max_column else None
+                if label is None and amount is None and status is None and payment_date is None:
                     continue
                 items.append(
                     {
                         "label": clean_value(label),
                         "amount": clean_value(amount),
                         "status": clean_value(status),
+                        "paymentDate": clean_value(payment_date),
                     }
                 )
             sections.append({"title": title, "items": items})

@@ -262,10 +262,12 @@ def write_month_sheet(workbook, month):
         ws.cell(1, 15).value = month.get("expenseTitle") or f"{month_label(month['id'])} Expenditures"
         ws.cell(1, 16).value = "Amount"
         ws.cell(1, 17).value = "Status"
+        ws.cell(1, 18).value = "Payment Date"
         for row_index, item in enumerate(expenses, start=2):
             ws.cell(row_index, 15).value = item.get("label") or None
             ws.cell(row_index, 16).value = item.get("amount") or None
             ws.cell(row_index, 17).value = item.get("status") or None
+            ws.cell(row_index, 18).value = item.get("paymentDate") or None
 
 
 def build_seed_from_state(state):
